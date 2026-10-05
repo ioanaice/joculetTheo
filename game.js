@@ -5,7 +5,7 @@
 var NUMAR_VARIANTE = 2;           // câte imagini apar într-o rundă
 var RUNDE_PE_SESIUNE = 10;        // după câte runde apare „Gata, pa-pa!”
 var DURATA_APASARE_LUNGA = 2000;  // milisecunde, pentru butonul de pe ecranul final
-var PAUZA_INTRE_SUNETE = 1000;    // milisecunde de liniște după ce se termină un sunet, până la pasul următor
+var PAUZA_INTRE_SUNETE = 0;    // milisecunde de liniște după ce se termină un sunet, până la pasul următor
 var DURATA_MAXIMA_SUNET = 5000;   // milisecunde; înregistrările mai lungi sunt oprite aici
 var EXTENSII_AUDIO = ['m4a', 'mp3'];  // în această ordine: vocea înregistrată, apoi sunetele descărcate
 
