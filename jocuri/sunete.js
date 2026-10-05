@@ -1,5 +1,5 @@
 // Jocul „Cine face așa?”: se aude sunetul real al animalului, copilul arată fotografia.
-// După răspunsul corect se aude lauda, apoi numele animalului.
+// După răspunsul corect se aude numele animalului, apoi lauda.
 
 JOCURI.push({
   id: 'sunete',
@@ -13,7 +13,7 @@ JOCURI.push({
     return { audio: animal.id + '-sunet', text: animal.sunet };
   },
 
-  // Ce se aude după laudă, la răspuns corect.
+  // Ce se aude la răspuns corect, înainte de laudă.
   dupaCorect: function (animal) {
     return { audio: animal.id, text: animal.nume };
   },

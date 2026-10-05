@@ -1,5 +1,5 @@
 // Jocul „Animale”: se aude numele animalului, copilul arată fotografia.
-// După răspunsul corect se aude lauda, apoi sunetul real al animalului.
+// După răspunsul corect se aude sunetul real al animalului, apoi lauda.
 
 JOCURI.push({
   id: 'animale',
@@ -13,7 +13,7 @@ JOCURI.push({
     return { audio: animal.id, text: animal.nume };
   },
 
-  // Ce se aude după laudă, la răspuns corect.
+  // Ce se aude la răspuns corect, înainte de laudă.
   dupaCorect: function (animal) {
     return { audio: animal.id + '-sunet', text: animal.sunet };
   },

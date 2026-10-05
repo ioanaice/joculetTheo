@@ -31,7 +31,7 @@ Jocul nu a fost încă testat pe tabletă și pe iPhone, nu este instalabil pe e
 
 - Sesiuni scurte: jocul se oprește singur după un număr fix de runde.
 - Fără penalizare la greșeală: se aude „mai încearcă”, apoi întrebarea se repetă. Nimic nu sună a eșec.
-- La răspuns corect: lauda, apoi sunetul ales de joc (`dupaCorect`), apoi runda următoare.
+- La răspuns corect: sunetul ales de joc (`dupaCorect`, dacă jocul are unul), apoi lauda, apoi runda următoare.
 - Ieșirea din joc trebuie să fie rapidă pentru adult: ✕ din joc este un click simplu.
 - Butonul de pe ecranul final se activează prin apăsare lungă, ca jocul să nu fie repornit de copil din greșeală.
 - Copilul nu citește: tot ce îi este adresat se aude sau se vede, fără text.
