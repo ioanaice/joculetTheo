@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Joculețele lui Theo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. Lista de jocuri (pentru adult) -->
+  <section id="ecran-lista" class="ecran derulabil activ">
+    <h1>Joculețele lui Theo</h1>
+    <div id="lista-jocuri" class="lista-jocuri"></div>
+    <details class="credit">
+      <summary>Credite fotografii și sunete</summary>
+      <p>Fotografii și sunete de pe Wikimedia Commons, nemodificate:</p>
+      <ul id="credite-foto"></ul>
+      <p>
+        Mâna care salută: <a href="https://openmoji.org" target="_blank" rel="noopener">OpenMoji</a>, CC BY-SA 4.0
+      </p>
+    </details>
+  </section>
+
+  <!-- 2. Descrierea pentru părinți -->
+  <section id="ecran-descriere" class="ecran">
+    <div class="derulabil descriere-continut">
+      <h1 id="descriere-titlu"></h1>
+      <div id="descriere-text"></div>
+    </div>
+    <div class="descriere-butoane">
+      <button id="btn-inapoi" class="buton secundar">Înapoi</button>
+      <button id="btn-porneste" class="buton principal">Pornește jocul</button>
+    </div>
+  </section>
+
+  <!-- 3. Jocul (pentru copil) -->
+  <section id="ecran-joc" class="ecran">
+    <div class="bara-joc">
+      <button id="btn-iesire" class="iesire" aria-label="Ieșire">✕</button>
+      <button id="btn-repeta" class="repeta" aria-label="Repetă cuvântul">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+          <path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div id="variante" class="variante"></div>
+  </section>
+
+  <!-- 4. Finalul sesiunii -->
+  <section id="ecran-final" class="ecran">
+    <img class="mana" src="assets/img/pa-pa.svg" alt="">
+    <p class="final-text">Gata, pa-pa!</p>
+    <button id="btn-meniu" class="apasare-lunga buton secundar">Ține apăsat pentru lista de jocuri</button>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="jocuri/animale.js"></script>
+  <script src="jocuri/sunete.js"></script>
+  <script src="jocuri/culori.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
