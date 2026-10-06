@@ -3,7 +3,7 @@
 
 // ---------- Setări ușor de schimbat ----------
 var NUMAR_VARIANTE = 2;           // câte imagini apar într-o rundă
-var RUNDE_PE_SESIUNE = 10;        // după câte runde apare „Gata, pa-pa!”
+var RUNDE_PE_SESIUNE = 5;        // după câte runde apare „Gata, pa-pa!”
 var DURATA_APASARE_LUNGA = 2000;  // milisecunde, pentru butonul de pe ecranul final
 var PAUZA_INTRE_SUNETE = 0;    // milisecunde de liniște după ce se termină un sunet, până la pasul următor
 var DURATA_MAXIMA_SUNET = 5000;   // milisecunde; înregistrările mai lungi sunt oprite aici
@@ -243,6 +243,14 @@ function amesteca(lista) {
 
 // Trece prin toate elementele înainte să repete vreunul și nu cere același element de două ori la rând.
 function urmatoareaTinta() {
+  // Cu doar două elemente, regula „nu de două ori la rând” ar da mereu aceeași alternanță, ușor de ghicit.
+  // Punem în sac fiecare element de trei ori și amestecăm: la fel de des, dar în ordine neprevăzută.
+  if (jocCurent.elemente.length <= 2) {
+    if (sac.length === 0) {
+      sac = amesteca(jocCurent.elemente.concat(jocCurent.elemente, jocCurent.elemente));
+    }
+    return sac.pop();
+  }
   if (sac.length === 0) {
     sac = amesteca(jocCurent.elemente);
     if (sac.length > 1 && sac[sac.length - 1] === tinta) sac.unshift(sac.pop());
@@ -271,13 +279,18 @@ function rundaNoua() {
   var corect = tinta;
   var altele = amesteca(jocCurent.elemente.filter(function (e) { return e !== corect; }))
     .slice(0, NUMAR_VARIANTE - 1);
+  if (jocCurent.incepeRunda) jocCurent.incepeRunda();
 
   var container = document.getElementById('variante');
   container.textContent = '';
   amesteca([corect].concat(altele)).forEach(function (element) {
     var buton = document.createElement('button');
     buton.className = 'varianta';
-    if (element.culoare) {
+    buton.dataset.id = element.id;
+    if (jocCurent.desen) {
+      // Jocul își desenează singur variantele.
+      buton.innerHTML = jocCurent.desen(element);
+    } else if (element.culoare) {
       buton.innerHTML = '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="' + element.culoare + '"/></svg>';
     } else {
       var imagine = document.createElement('img');

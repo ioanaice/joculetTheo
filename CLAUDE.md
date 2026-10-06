@@ -58,7 +58,7 @@ Pictograma se desenează în `assets/img/pictograma.svg`; fișierele `pictograma
 | Ce | Unde |
 |---|---|
 | Un joc: titlu, ce se aude, textul pentru părinți | `jocuri/<joc>.js`, câte un fișier pentru fiecare joc |
-| Conținut folosit de mai multe jocuri: animale, culori, laude, surse | `data.js` |
+| Conținut folosit de mai multe jocuri: animale, culori, forme, laude, surse | `data.js` |
 | Logica jocului și setările (număr de variante, runde, pauze) | `game.js`, la început |
 | Aspect | `style.css` |
 | Fotografii | `assets/img/<id>.jpg` |
@@ -71,6 +71,7 @@ Dacă lipsește un fișier audio, jocul citește textul cu vocea dispozitivului.
 
 Un joc nou:
 - se adaugă singur în listă cu `JOCURI.push({...})` și definește `intrebare(element)`, opțional `dupaCorect(element)` și `descriere`;
+- dacă variantele nu sunt fotografii, își desenează singur fiecare variantă cu `desen(element)`; dacă ceva se schimbă de la o rundă la alta (de exemplu forma din „Mare / mic”), o alege în `incepeRunda()`;
 - nu depinde de alt joc; ce au în comun stă în `data.js`;
 - se încarcă în `index.html` între `data.js` și `game.js`; ordinea scripturilor este ordinea cartonașelor.
 

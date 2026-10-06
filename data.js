@@ -42,6 +42,30 @@ var CULORI = [
   { id: 'verde',    nume: 'Verde',    culoare: '#43a047' }
 ];
 
+// ---------- Forme ----------
+// desen = forma, desenată într-un pătrat de 100 x 100. Folosite de jocurile „Forme” și „Mare / mic”.
+var FORME = [
+  { id: 'cerc',     nume: 'Cercul',     desen: '<circle cx="50" cy="50" r="44"/>' },
+  { id: 'patrat',   nume: 'Pătratul',   desen: '<rect x="8" y="8" width="84" height="84"/>' },
+  { id: 'triunghi', nume: 'Triunghiul', desen: '<polygon points="50,8 95,88 5,88"/>' },
+  { id: 'stea',     nume: 'Steaua',     desen: '<polygon points="50,6 61.2,36.6 93.8,37.8 68.1,57.9 77,89.2 50,71 23,89.2 31.9,57.9 6.2,37.8 38.8,36.6"/>' }
+];
+
+// Culorile în care pot fi desenate formele. Culoarea e aleasă la întâmplare, deci nu ține de o formă anume.
+var CULORI_FORME = ['#e53935', '#fb8c00', '#43a047', '#1e88e5', '#8e44ad', '#d81b60', '#00897b'];
+
+// Alege la întâmplare o culoare pentru forme, alta decât cele din lista „fara”.
+function culoareLaIntamplare(fara) {
+  var ramase = CULORI_FORME.filter(function (culoare) { return fara.indexOf(culoare) === -1; });
+  return ramase[Math.floor(Math.random() * ramase.length)];
+}
+
+// Întoarce desenul unei forme. Cu scara 1 forma umple cartonașul; cu 0.5 este pe jumătate.
+function deseneazaForma(forma, scara, culoare) {
+  return '<svg viewBox="0 0 100 100"><g fill="' + culoare + '" transform="translate(50 50) scale(' + scara + ') translate(-50 -50)">' +
+    forma.desen + '</g></svg>';
+}
+
 // ---------- Laude, încurajare și final ----------
 var LAUDE = [
   { audio: 'bravo-1', text: 'Bravo!' },
@@ -52,6 +76,7 @@ var SALUT_FINAL = { audio: 'pa-pa', text: 'Gata, pa-pa!' };
 
 // ---------- Surse ----------
 // Fiecare sursă a fost deschisă și verificată în octombrie 2026.
+// Ordinea de aici nu contează: în aplicație sursele sunt numerotate în ordinea în care apar în text.
 var SURSE = {
   cdc18: {
     titlu: 'CDC – Repere de dezvoltare la 18 luni',
@@ -80,6 +105,14 @@ var SURSE = {
   strouse: {
     titlu: 'Strouse și Samson (2021) – Learning From Video: A Meta-Analysis of the Video Deficit in Children Ages 0 to 6 Years, Child Development',
     url: 'https://red.library.usd.edu/se-fp/3/'
+  },
+  verdine: {
+    titlu: 'Verdine și colaboratorii (2017) – Shape Up: An Eye-Tracking Study of Preschoolers’ Shape Name Processing and Spatial Development, Developmental Psychology',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5676522/'
+  },
+  ferry: {
+    titlu: 'Ferry și colaboratorii (2025) – “Bigger” versus “smaller”: Children’s understanding of size comparison words becomes more precise with age, Child Development',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11868677/'
   },
   laing: {
     titlu: 'Laing (2019) – A role for onomatopoeia in early language, Language and Cognition',

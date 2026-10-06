@@ -34,4 +34,4 @@ Sunetele de animale din `assets/audio/` sunt de pe Wikimedia Commons, în varian
 
 `pa-pa.svg` (mâna care salută) este din [OpenMoji](https://openmoji.org), licență [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-`culori.svg` și `pictograma.svg` (cu variantele ei `.png`) sunt desenate pentru acest proiect.
+`culori.svg`, `forme.svg`, `mare-mic.svg` și `pictograma.svg` (cu variantele ei `.png`) sunt desenate pentru acest proiect. La fel și formele din jocuri (cerc, pătrat, triunghi, stea), definite în `data.js`.
