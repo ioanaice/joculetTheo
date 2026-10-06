@@ -25,7 +25,9 @@ Orice schimbare de atingere, sunet sau așezare în pagină trebuie verificată 
 
 Claude nu poate asculta sunetele și nu vede dispozitivele reale. După o schimbare de sunet sau de imagine, spune asta deschis și roag-o pe Ioana să asculte și să se uite.
 
-Jocul nu a fost încă testat pe tabletă și pe iPhone, nu este instalabil pe ecranul principal și nu este publicat.
+Jocul este publicat cu GitHub Pages la `https://ioanaice.github.io/joculetTheo/`; pagina se actualizează singură la 1–2 minute după `git push`. Poate fi adăugat pe ecranul principal (pictogramă proprie, pornire pe tot ecranul), dar nu merge fără internet.
+
+Pictograma se desenează în `assets/img/pictograma.svg`; fișierele `pictograma-*.png` sunt generate din ea și trebuie refăcute dacă desenul se schimbă.
 
 ## Regulile jocului
 
